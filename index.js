@@ -1,6 +1,6 @@
 function getPointValue() {
     var possiblePoints = [1, 25, 25, 50, 50, 75, 75, 75, 100, 100, 100, 150, 150, 150, 200, 200, 200, 300, 300, 400, 400, 800];
-    points = possiblePoints[Math.floor(Math.random()*possiblePoints.length)];
+    points = possiblePoints[Math.floor(Math.random() * possiblePoints.length)];
     document.getElementById("pointsValue").value = points + " points per letter";
 }
 
@@ -33,42 +33,22 @@ puzzles = [
         ]
     },
     {
-        category: "Tester",
+        category: "Music",
         words: [
             {
-                word: "hello",
-                row: 0,
-                offset: 0
-            },
-            {
-                word: "world",
-                row: 3,
-                offset:2
-            }
-        ]
-    },
-    {
-        category: "Irish",
-        words: [
-            {
-                word: "ivar",
-                row: 0,
-                offset: 0
-            },
-            {
-                word: "O",
-                row: 0,
-                offset: 5
-            },
-            {
-                word: "chancelor",
+                word: "johann",
                 row: 1,
-                offset: 1
+                offset: 0
             },
             {
-                word: "neal",
+                word: "strauss",
+                row: 1,
+                offset: 7
+            }, 
+            {
+                word: "senior",
                 row: 2,
-                offset: 0
+                offset: 4
             }
         ]
     }
@@ -78,6 +58,10 @@ function getNextPuzzle() {
     var overlays = document.getElementById("overlays");
     while (overlays.firstChild) {
         overlays.removeChild(overlays.firstChild);
+    }
+
+    if (puzzleNum >= puzzles.length) {
+        puzzleNum = 0;
     }
 
     var puzzle = puzzles[puzzleNum];
@@ -110,6 +94,8 @@ function handleGuess() {
         console.log(results[i]);
         results[i].src = "letters/" + letterGuess + ".png";
     }
+    // Clear out guess
+    document.getElementById("letterGuess").value = "";
     document.getElementById("pointsEarned").innerHTML = (points * results.length) + " Points Earned!";    
 }
 
