@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ringstraße of Fortune</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <style>
+      body {
+        background-image: url("RoFLogo.png");
+        background-size: 300px;
+        background-repeat: round;
+      }
+
+      @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+      @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+      @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+      .elem {
+        border-radius: 50%;
+      }
+
+      .elem:hover {
+          -webkit-animation:spin 1.5s linear infinite;
+          -moz-animation:spin 1.5s linear infinite;
+          animation:spin 1.5s linear infinite;
+      }
+
+      .imageWrapper {
+        position: relative;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div class="jumbotron ">
+      <h1 class="display-3">Welcome to Ringstraße of Fortune!</h1>
+      <p class="lead">
+        This is a totally original game and not at all a rip off of Wheel of Fortune, even though it has mostly the same rules:
+        <ul style="list-style: none;">
+          <li>On your turn, we'll spin the Ringstraße behind the scenes and come up with a value.</li>
+          <li>You can either guess a letter or try to solve the puzzle</li>
+        </ul>
+      </p>
+    </div>
+    
+        
+
+    <!-- Page Content -->
+    <div class="">
+      <div class="row">
+        <div class="col-lg-3 col-md-6" style="background: #e9ecef; margin-left: 5%;">
+            <h2 style="text-align: center;">Spin the Straße!</h2>
+            <img class="elem" src="Ringtile.png" onclick="getPointValue();">
+            <br></br>
+            <input type="text" class="form-control" id="pointsValue" placeholder="points per letter" readonly />
+            <br>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Letter Guess" maxlength="1" id="letterGuess">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button" onclick="handleGuess();">Guess</button>
+              </div>
+            </div>
+            <h2 id="pointsEarned" style="text-align: center;"></h2>   
+            <br>
+            <button type="button" class="btn btn-success" onclick="getNextPuzzle();">Get new word/phrase</button>
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-6" style="background: #e9ecef;">
+          <h2 id="categoryHeader" style="text-align: center;"></h2>
+          <div class="imageWrapper">
+            <img src="WoFBoard.png" style="position: absolute;">
+            <div id="overlays"></div>            
+          </div>                
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+
+</html>
