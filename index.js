@@ -20,6 +20,7 @@ function getPositionValues(row, col) {
     }
 }
 
+points = 50;
 puzzleNum = 0;
 puzzles = [
     {
@@ -33,7 +34,7 @@ puzzles = [
         ]
     },
     {
-        category: "Music",
+        category: "Künstler",
         words: [
             {
                 word: "johann",
@@ -49,6 +50,61 @@ puzzles = [
                 word: "senior",
                 row: 2,
                 offset: 4
+            }
+        ]
+    },
+    {
+        category: "Statues",
+        words: [
+            {
+                word: "pallas",
+                row: 1,
+                offset: 0
+            }, 
+            {
+                word: "athene",
+                row: 1,
+                offset: 7
+            },
+            {
+                word: "brunnen",
+                row: 2,
+                offset: 3
+            }
+        ]
+    },
+    {
+        category: "Buildings - Gothic",
+        words: [
+            {
+                word: "rathaus",
+                row: 1,
+                offset: 3
+            }
+        ]
+    },
+    {
+        category: "Emperor",
+        words: [
+            {
+                word: "franz",
+                row: 1,
+                offset: 1
+            },
+            {
+                word: "jospeh",
+                row: 1,
+                offset: 7
+            },
+            {
+                word: "the",
+                row: 2,
+                offset: 2
+            },
+            {
+                word: "first",
+                row: 2,
+                offset: 6
             }
         ]
     }
