@@ -24,16 +24,6 @@ points = 50;
 puzzleNum = 0;
 puzzles = [
     {
-        category: "Ringstrasse",
-        words: [
-            {
-                word: "ringstrasse",
-                row: 1,
-                offset: 1
-            }
-        ]
-    },
-    {
         category: "Künstler",
         words: [
             {
